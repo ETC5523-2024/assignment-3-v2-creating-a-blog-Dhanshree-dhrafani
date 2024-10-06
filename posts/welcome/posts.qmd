@@ -69,3 +69,20 @@ top_novels
 Table @ref(tab
 ) illustrates that novels with strong themes of social justice, personal freedom, and human experience dominate the list of top downloads.
 
+## Readability and Popularity
+To explore whether readability plays a role in a book’s popularity, I analyzed the relationship between the Flesch Reading Ease Score and the number of downloads. The graph below shows that, while there is a positive correlation between readability and downloads, it is not the only factor driving popularity.
+
+```{r}
+# Plot Readability vs Downloads
+ggplot(cleaned_classics, aes(x = Readability, y = Downloads)) +
+  geom_point(color = "blue") +
+  geom_smooth(method = "lm", color = "red") +
+  labs(title = "Readability vs. Downloads for Classic Novels",
+       x = "Flesch Reading Ease Score",
+       y = "Number of Downloads")
+
+```
+From the graph above (Figure @ref(fig
+)), it is evident that more accessible books, like Pride and Prejudice, tend to have higher downloads. However, some lower-readability novels, like Frankenstein, maintain popularity due to their compelling narratives and cultural significance.
+
+
