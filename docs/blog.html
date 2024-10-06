@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Dhanshree Dhrafani’s Data Insights - About</title>
+<title>Dhanshree Dhrafani’s Data Insights - Dhanshree’s Data Exploration Blog</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,9 +30,12 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
@@ -65,15 +68,73 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script>
 
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
@@ -88,11 +149,11 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="./index.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./blog.html"> 
+    <a class="nav-link active" href="./blog.html" aria-current="page"> 
 <span class="menu-text">Blog</span></a>
   </li>  
 </ul>
@@ -103,59 +164,82 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-page-left">
+      <h1 class="title">Dhanshree’s Data Exploration Blog</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta column-page-left">
+
+      
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Classic Literature">Classic Literature <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Data Analysis">Data Analysis <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
-<div class="quarto-about-jolla content">
- <header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">About</h1>
-</div>
-<div class="quarto-title-meta">
-  </div>
-</header><main class="content" id="quarto-document-content">
-<section id="about-me" class="level1">
-<h1>About Me</h1>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="My_photo.jpeg" class="img-fluid figure-img"></p>
-<figcaption>Photo of Dhanshree Dhrafani</figcaption>
-</figure>
-</div>
-<p>Hello, I’m Dhanshree Dhrafani, a Master’s student at Monash University, currently pursuing a Master’s in Business Analytics. I have always been drawn to the world of data, where the power of numbers and trends can unveil compelling stories and insights. My goal is to bridge the gap between data and meaningful, real-world applications, particularly in literature and business.</p>
-<p>When I’m not exploring data sets or diving deep into analysis, you’ll find me lost in a good book, brush in hand while painting, or immersing myself in various forms of creative arts. Reading has always been a passion of mine, particularly classic literature, which has taught me the importance of timeless themes and character-driven narratives.</p>
-<p>Painting is where I let my creativity flow, allowing me to balance the analytical rigor of data with artistic expression. My fascination with creative arts inspires me to view problems from multiple perspectives, a skill I apply both in life and in the field of business analytics.</p>
-<p>With a unique blend of analytical skills and creative thinking, I strive to solve complex problems in innovative ways, ensuring that data-driven decisions not only make sense on paper but resonate with the human experience.</p>
-</section>
-<section id="welcome-to-dhanshree-dhrafanis-data-exploration-blog" class="level1">
-<h1>Welcome to Dhanshree Dhrafani’s Data Exploration Blog</h1>
-<p>Hello and welcome! I’m Dhanshree Dhrafani, a Master’s student in Business Analytics at Monash University, and I’m thrilled to share my journey of discovery in the world of data with you. This blog is a place where I merge my love for classic literature with my passion for data analytics, using numbers and insights to tell stories that connect the past with the future.</p>
-<p>Here, you’ll find a collection of my thoughts, analyses, and visualizations on various topics ranging from timeless literary works to modern data trends. I believe that data isn’t just about numbers—it’s about uncovering patterns, drawing insights, and solving real-world problems in creative and innovative ways. Whether you’re interested in the digital renaissance of classic novels or the nuances of data cleaning and visualization, there’s something here for everyone!</p>
-<section id="what-youll-find" class="level2">
-<h2 data-anchor-id="what-youll-find">What You’ll Find</h2>
-<ul>
-<li><strong>Data Analyses:</strong> From deep dives into literary datasets to business applications, I’ll be sharing detailed explorations of how data can unlock hidden insights.</li>
-<li><strong>Visualizations:</strong> A picture is worth a thousand words, and I’ll be bringing my analyses to life through visually engaging graphs and charts.</li>
-<li><strong>Personal Projects:</strong> You can also find some of my independent projects, blending my interest in creative arts with data analysis.</li>
-</ul>
-<p>Feel free to explore the blog posts, engage with the content, and share your thoughts! I’m always open to feedback, collaboration, or just discussing the fascinating world of data.</p>
-<p><a href="https://github.com/ETC5523-2024/assignment-3-v2-creating-a-blog-Dhanshree-dhrafani">GitHub</a></p>
+<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
 
 
-</section>
-</section>
-</main> 
-  <hr class="about-sep">
-   <div class="about-links">
-  <a href="https://github.com/etc5523-2022" class="about-link" rel="" target="">
-    <i class="bi bi-github"></i>
-     <span class="about-link-text">Github</span>
-  </a>
+
+
+
+
+
+
+
+<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-categories="Data Analysis,Classic Literature" data-listing-date-sort="1727791200000" data-listing-file-modified-sort="1728217023445" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="940">
+<div class="thumbnail">
+<p><a href="./posts/welcome/posts.html" class="no-external"></a></p><a href="./posts/welcome/posts.html" class="no-external">
+<p class="card-img-top"><img src="posts\welcome\posts_files\figure-html\unnamed-chunk-3-1.png"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./posts/welcome/posts.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/welcome/posts.html" class="no-external">Dhanshree Dhrafani’s Data Insights</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/welcome/posts.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Data Analysis'); return false;">
+Data Analysis
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Classic Literature'); return false;">
+Classic Literature
 </div>
 </div>
- <!-- /main -->
+<div class="listing-description">
+<a href="./posts/welcome/posts.html" class="no-external">Classic literature continues to captivate readers, even in the fast-paced, tech-driven world of today. Books like Jane Austen’s <em>Pride and Prejudice</em> and Mary Shelley’s <em>Franken…</em></a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/welcome/posts.html" class="no-external">
+<div class="listing-date">
+Oct 2, 2024
+</div>
+<div class="listing-author">
+Dhanshree Dhrafani
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -176,6 +260,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
   const isCodeAnnotation = (el) => {
     for (const clz of el.classList) {
       if (clz.startsWith('code-annotation-')) {                     
