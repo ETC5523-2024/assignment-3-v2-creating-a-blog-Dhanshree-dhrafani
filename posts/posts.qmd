@@ -29,7 +29,8 @@ The dataset for this analysis was sourced from **Project Gutenberg**, one of the
 Before diving into the analysis, I cleaned the dataset by removing books with missing download or readability data. Additionally, I filtered out non-classic works to focus solely on literature from the 19th century. The final dataset included 1,006 books.
 
 ### Code for Data Cleaning
-```{r}
+```{r, warning=FALSE, message=FALSE}
+#| code-fold: true
 # Load necessary libraries
 library(tidyverse)
 
@@ -55,24 +56,26 @@ print(cleaned_classics)
 As expected, *Pride and Prejudice* leads the list of most downloaded novels, followed by works like *A Doll’s House* and *Narrative of the Life of Frederick Douglass*. These novels continue to resonate with modern readers because of their rich social commentary and character-driven narratives.
 
 ```{r}
+#| code-fold: true
 # Create a table of the top 5 most downloaded novels
 top_novels <- cleaned_classics %>%
   filter(Title %in% c("Pride and Prejudice", "A Doll's House", "Narrative of the Life of Frederick Douglass", 
                       "The Adventures of Tom Sawyer", "Frankenstein")) %>%
   arrange(desc(Downloads))
 
+# Print the table
 top_novels
-
 ```
 
+**Table: Most Downloaded Novels {#tbl-top-novels}**
 
-Table @ref(tab
-) illustrates that novels with strong themes of social justice, personal freedom, and human experience dominate the list of top downloads.
+Table @tbl-top-novels illustrates that novels with strong themes of social justice, personal freedom, and human experience dominate the list of top downloads.
 
 ## Readability and Popularity
 To explore whether readability plays a role in a book’s popularity, I analyzed the relationship between the Flesch Reading Ease Score and the number of downloads. The graph below shows that, while there is a positive correlation between readability and downloads, it is not the only factor driving popularity.
 
 ```{r}
+#| code-fold: true
 # Plot Readability vs Downloads
 ggplot(cleaned_classics, aes(x = Readability, y = Downloads)) +
   geom_point(color = "blue") +
@@ -82,13 +85,16 @@ ggplot(cleaned_classics, aes(x = Readability, y = Downloads)) +
        y = "Number of Downloads")
 
 ```
-From the graph above (Figure @ref(fig
-)), it is evident that more accessible books, like Pride and Prejudice, tend to have higher downloads. However, some lower-readability novels, like Frankenstein, maintain popularity due to their compelling narratives and cultural significance.
+
+**Figure: Readability vs. Downloads for Classic Novels {#fig-readability-downloads}**
+
+From the graph above @fig-readability-downloads, it is evident that more accessible books, like Pride and Prejudice, tend to have higher downloads. However, some lower-readability novels, like Frankenstein, maintain popularity due to their compelling narratives and cultural significance.
 
 ## Genres and Themes
 Another factor contributing to the popularity of classic novels is the diversity of genres they encompass. The chart below shows the breakdown of genres among the most downloaded classics, ranging from Gothic horror to social realism. Novels with universal themes like love, struggle, and social commentary attract readers from various walks of life.
 
 ```{r}
+#| code-fold: true
 # Genre breakdown of top novels
 genres <- cleaned_classics %>%
   mutate(Genre = case_when(
@@ -105,10 +111,10 @@ ggplot(genres, aes(x = Genre, y = Downloads, fill = Genre)) +
        y = "Number of Downloads") +
   theme_minimal()
 
+
 ```
 
-The chart (Figure @ref(fig
-)) shows that genres like Gothic and Romance remain highly popular, proving that stories involving strong emotions and moral dilemmas continue to fascinate readers.
+The chart @fig-genres-downloads shows that genres like Gothic and Romance remain highly popular, proving that stories involving strong emotions and moral dilemmas continue to fascinate readers.
 
 ## Conclusion
 Classic literature continues to thrive in the digital age, driven by both accessibility and timeless relevance. While readability plays a significant role in the popularity of these novels, other factors—such as thematic depth and genre diversity—are equally important. My analysis shows that novels with universal themes of love, justice, and morality continue to captivate readers across generations.

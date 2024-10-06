@@ -5,10 +5,10 @@ project:
 website:
   title: "Dhanshree Dhrafani's Data Insights"
   description: |
-  Welcome to my personal data exploration blog, where I analyze and visualize various topics
-  through the lens of data. Here, you'll find insights into my journey with data analysis and classic literature.
+    Welcome to my personal data exploration blog, where I analyze and visualize various topics
+    through the lens of data. Here, you'll find insights into my journey with data analysis and classic literature.
 
-  navbar:
+navbar:
   right:
     - text: "Home"
       href: index.qmd
