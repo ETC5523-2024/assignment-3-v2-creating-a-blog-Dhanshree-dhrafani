@@ -107,3 +107,10 @@ ggplot(genres, aes(x = Genre, y = Downloads, fill = Genre)) +
 
 ```
 
+The chart (Figure @ref(fig
+)) shows that genres like Gothic and Romance remain highly popular, proving that stories involving strong emotions and moral dilemmas continue to fascinate readers.
+
+## Conclusion
+Classic literature continues to thrive in the digital age, driven by both accessibility and timeless relevance. While readability plays a significant role in the popularity of these novels, other factors—such as thematic depth and genre diversity—are equally important. My analysis shows that novels with universal themes of love, justice, and morality continue to captivate readers across generations.
+
+As noted by Flesch (1948), readability is essential for a text’s accessibility. However, the sustained success of works like Pride and Prejudice and Frankenstein highlights the importance of emotional resonance and narrative complexity. Through platforms like Project Gutenberg, these classics will remain a part of our cultural heritage for years to come.
