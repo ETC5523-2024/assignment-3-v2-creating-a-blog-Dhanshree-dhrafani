@@ -1,0 +1,71 @@
+---
+title: "The Timeless Appeal of Classic Literature"
+author: "Dhanshree Dhrafani"
+date: "2024-10-02"
+categories: ["Data Analysis", "Classic Literature"]
+thumbnail: thumbnail.jpg
+---
+
+# The Timeless Appeal of Classic Literature in the Digital Age
+
+Classic literature continues to captivate readers, even in the fast-paced, tech-driven world of today. Books like Jane Austen’s *Pride and Prejudice* and Mary Shelley’s *Frankenstein* have stood the test of time. But what makes these novels, written centuries ago, still resonate with modern readers? Using data from Project Gutenberg, I dive into the factors that sustain the popularity of classic literature in the digital age.
+
+## Problem Description
+
+The key question behind this analysis is: **Why do some classic novels remain popular even in the digital era?** With free access to public domain works on platforms like Project Gutenberg, we can analyze download patterns to uncover the secrets behind the continued success of these works.
+
+Through this analysis, I aim to understand the factors driving the sustained popularity of classic literature by exploring the relationship between readability and the number of downloads. Does accessibility in terms of readability contribute to the enduring appeal of these books?
+
+## Data Description
+
+The dataset for this analysis was sourced from **Project Gutenberg**, one of the largest collections of public domain works. The dataset includes over 1,000 classic novels with the following key variables:
+
+- **Title**: The name of each classic novel.
+- **Number of Downloads**: The total number of downloads for each book on Project Gutenberg.
+- **Flesch Reading Ease Score**: A score indicating the readability of the text, where higher scores reflect easier readability.
+
+### Data Cleaning Steps
+
+Before diving into the analysis, I cleaned the dataset by removing books with missing download or readability data. Additionally, I filtered out non-classic works to focus solely on literature from the 19th century. The final dataset included 1,006 books.
+
+### Code for Data Cleaning
+```{r}
+# Load necessary libraries
+library(tidyverse)
+
+# Load the dataset
+classics <- read_csv("classics.csv")
+
+# Data cleaning process
+cleaned_classics <- classics %>%
+  filter(!is.na(`metadata.downloads`), !is.na(`metrics.difficulty.flesch reading ease`)) %>%
+  select(Title = `bibliography.title`, 
+         Downloads = `metadata.downloads`, 
+         Readability = `metrics.difficulty.flesch reading ease`,
+         PublicationYear = `bibliography.publication.year`)
+         
+# Preview the cleaned dataset
+print(cleaned_classics)
+
+```
+## Analysis
+
+### Table of Most Downloaded Novels
+
+As expected, *Pride and Prejudice* leads the list of most downloaded novels, followed by works like *A Doll’s House* and *Narrative of the Life of Frederick Douglass*. These novels continue to resonate with modern readers because of their rich social commentary and character-driven narratives.
+
+```{r}
+# Create a table of the top 5 most downloaded novels
+top_novels <- cleaned_classics %>%
+  filter(Title %in% c("Pride and Prejudice", "A Doll's House", "Narrative of the Life of Frederick Douglass", 
+                      "The Adventures of Tom Sawyer", "Frankenstein")) %>%
+  arrange(desc(Downloads))
+
+top_novels
+
+```
+
+
+Table @ref(tab
+) illustrates that novels with strong themes of social justice, personal freedom, and human experience dominate the list of top downloads.
+
