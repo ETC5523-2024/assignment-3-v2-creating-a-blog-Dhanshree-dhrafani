@@ -1,5 +1,5 @@
 ---
-title: "The Timeless Appeal of Classic Literature"
+title: "Dhanshree Dhrafani's Data Insights"
 author: "Dhanshree Dhrafani"
 date: "2024-10-02"
 categories: ["Data Analysis", "Classic Literature"]
