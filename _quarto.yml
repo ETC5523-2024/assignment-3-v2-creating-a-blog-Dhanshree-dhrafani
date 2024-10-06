@@ -2,6 +2,25 @@ project:
   type: website
   output-dir: docs
 
+website:
+  title: "Dhanshree Dhrafani's Data Insights"
+  description: |
+  Welcome to my personal data exploration blog, where I analyze and visualize various topics
+  through the lens of data. Here, you'll find insights into my journey with data analysis and classic literature.
+
+  navbar:
+  right:
+    - text: "Home"
+      href: index.qmd
+    - text: "About"
+      href: about.qmd
+    - text: "Blog"
+      href: posts/posts.qmd
+
+page-footer:
+  - text: "GitHub"
+    url: "https://github.com/ETC5523-2024/assignment-3-v2-creating-a-blog-Dhanshree-dhrafani"
+
 format:
   html:
     theme: cosmo
@@ -9,22 +28,3 @@ format:
     toc: true
     toc-depth: 2
     code-tools: true
-
-website:
-  title: "Dhanshree Dhrafani's Data Insights"
-  description: |
-    Welcome to my personal data exploration blog, where I analyze and visualize various topics
-    through the lens of data. Here, you'll find insights into my journey with data analysis and classic literature.
-
-page-footer:
-  - text: "GitHub"
-    url: "https://github.com/ETC5523-2024/assignment-3-v2-creating-a-blog-Dhanshree-dhrafani"
-
-navbar:
-  right:
-    - text: "Home"
-      href: index.qmd
-    - text: "About"
-      href: about.qmd
-    - text: "Blog"
-      href: posts/posts.html
