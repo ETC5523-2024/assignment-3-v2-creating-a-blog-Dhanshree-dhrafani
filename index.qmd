@@ -27,9 +27,6 @@ Feel free to explore the blog posts, engage with the content, and share your tho
 
 ## Latest Post
 
-- [The Timeless Appeal of Classic Literature in the Digital Age](posts/blog.qmd)
+- [The Timeless Appeal of Classic Literature in the Digital Age](posts/posts.html)
 
 Stay tuned for more updates as I continue to explore the fascinating intersection of data, literature, and technology. If you’re as passionate about data as I am, or if you’re simply curious to learn more, I’m excited to have you along for the ride!
-
-
-
