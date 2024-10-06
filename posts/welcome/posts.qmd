@@ -85,4 +85,25 @@ ggplot(cleaned_classics, aes(x = Readability, y = Downloads)) +
 From the graph above (Figure @ref(fig
 )), it is evident that more accessible books, like Pride and Prejudice, tend to have higher downloads. However, some lower-readability novels, like Frankenstein, maintain popularity due to their compelling narratives and cultural significance.
 
+## Genres and Themes
+Another factor contributing to the popularity of classic novels is the diversity of genres they encompass. The chart below shows the breakdown of genres among the most downloaded classics, ranging from Gothic horror to social realism. Novels with universal themes like love, struggle, and social commentary attract readers from various walks of life.
+
+```{r}
+# Genre breakdown of top novels
+genres <- cleaned_classics %>%
+  mutate(Genre = case_when(
+    str_detect(Title, "Pride and Prejudice") ~ "Romance",
+    str_detect(Title, "Frankenstein") ~ "Gothic",
+    str_detect(Title, "Douglass") ~ "Slave Narrative",
+    TRUE ~ "Other"
+  ))
+
+ggplot(genres, aes(x = Genre, y = Downloads, fill = Genre)) +
+  geom_bar(stat = "identity") +
+  labs(title = "Most Downloaded Genres on Project Gutenberg",
+       x = "Genre",
+       y = "Number of Downloads") +
+  theme_minimal()
+
+```
 
