@@ -56,6 +56,7 @@ As expected, *Pride and Prejudice* leads the list of most downloaded novels, fol
 
 ```{r}
 #| code-fold: true
+#| label: tbl-top-novels
 # Create a table of the top 5 most downloaded novels
 top_novels <- cleaned_classics %>%
   filter(Title %in% c("Pride and Prejudice", "A Doll's House", "Narrative of the Life of Frederick Douglass", 
@@ -66,7 +67,6 @@ top_novels <- cleaned_classics %>%
 top_novels
 ```
 
-**Table: Most Downloaded Novels {#tbl-top-novels}**
 
 Table @tbl-top-novels illustrates that novels with strong themes of social justice, personal freedom, and human experience dominate the list of top downloads.
 
@@ -75,6 +75,7 @@ To explore whether readability plays a role in a book’s popularity, I analyzed
 
 ```{r}
 #| code-fold: true
+#| label: fig-readability-downloads
 # Plot Readability vs Downloads
 ggplot(cleaned_classics, aes(x = Readability, y = Downloads)) +
   geom_point(color = "blue") +
@@ -85,7 +86,6 @@ ggplot(cleaned_classics, aes(x = Readability, y = Downloads)) +
 
 ```
 
-**Figure: Readability vs. Downloads for Classic Novels {#fig-readability-downloads}**
 
 From the graph above @fig-readability-downloads, it is evident that more accessible books, like Pride and Prejudice, tend to have higher downloads. However, some lower-readability novels, like Frankenstein, maintain popularity due to their compelling narratives and cultural significance.
 
@@ -94,6 +94,7 @@ Another factor contributing to the popularity of classic novels is the diversity
 
 ```{r}
 #| code-fold: true
+#| label: fig-genres-downloads
 # Genre breakdown of top novels
 genres <- cleaned_classics %>%
   mutate(Genre = case_when(
