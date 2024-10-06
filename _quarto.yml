@@ -27,4 +27,4 @@ navbar:
     - text: "About"
       href: about.qmd
     - text: "Blog"
-      href: posts/posts.qmd
+      href: posts/posts.html
